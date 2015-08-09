@@ -1,0 +1,3 @@
+fr_FR-ak-cur.lite.res	6fbd525f521ef6f05487b246a71a74c4	526467
+fr_FR.lang	16e3508289d24689342a499bf25f9356	4125
+fr_FR-lk-text.lite.res	55e7d60cc5f7cda019a9f2d8ffd685f5	3069848

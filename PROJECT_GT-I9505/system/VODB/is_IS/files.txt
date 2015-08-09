@@ -1,0 +1,3 @@
+is_IS-ak-cur.lite.res	7cb4dc07d22fc334df0a1ff43ce923ba	511979
+is_IS.lang	9e1f105c4f46a4ace65a1fbf419991a2	4125
+is_IS-lk-text.lite.res	3e1ca39979dd6a06c5df1668142bb965	4449540
