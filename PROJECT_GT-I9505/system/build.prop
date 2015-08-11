@@ -280,9 +280,11 @@ ro.gps.agps_provider=1
 ro.pip.gated=0
 ro.build.version.sdl=2101
 
-#Tweaks:
+# Tweaks
+fw.max_users=30
+fw.show_multiuserui=1
+debug.performance.tuning=1 
 windowsmgr.max_events_per_sec=300
-Debug.performance.tuning=1 
 Video.accelerate.hw=1
 wifi.supplicant_scan_interval=400
 pm.sleep_mode=1
@@ -303,12 +305,17 @@ ro.ril.disable.power.collapse=0
 ro.ril.power_collapse=1
 ro.ril.enable.amr.wideband=1
 ro.vold.umsdirtyratio=20
+ro.media.capture.torchIntensity=40
+ro.media.capture.flashIntensity=70
+ro.media.capture.flash=led
 ro.media.enc.jpeg.quality=100
+ro.media.cam.preview.fps=0
 ro.secure=0
 ro.product.gpu.driver=1
 ro.min.fling_velocity=8000
 ro.max.fling_velocity=15000
 ro.min_pointer_dur=8
+ro.camcorder.videoModes=true
 persist.service.adb.enable=1
 persist.service.pcsync.enable=0
 persist.service.lgospd.enable=0
