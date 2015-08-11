@@ -131,22 +131,6 @@ if
 	package_extract_dir("Hulk/Files/S6", "/system/priv-app");
 endif;
 
-#-- SUB WINDOW 9
-
-if
-    file_getprop("/tmp/aroma/window9.prop","selected.1") == "1"
-     then
-    ui_print("Installing Normal Clock App...");
-	package_extract_dir("Hulk/Clock/S4", "/system/app");
-endif;
-	
-if
-    file_getprop("/tmp/aroma/window9.prop","selected.1") == "2"
-     then
-    ui_print("Installing S6 Clock App...");
-	package_extract_dir("Hulk/Clock/S6", "/system/app");
-endif;
-
 #-- SUB WINDOW 10
 
 if
