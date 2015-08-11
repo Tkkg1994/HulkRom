@@ -24,6 +24,7 @@ if
      then
     ui_print("Installing Stock Kernel...");
 	package_extract_file("Hulk/Kernel/Stock/boot.img", "/dev/block/platform/dw_mmc.0/by-name/BOOT");
+	package_extract_dir("Hulk/Kernel/Stock/modules", "/system/lib/modules");
 endif;
 	
 if
@@ -31,6 +32,7 @@ if
      then
     ui_print("Installing Hulk-Kernel...");
 	package_extract_file("Hulk/Kernel/Hulk-Kernel/boot.img", "/dev/block/platform/dw_mmc.0/by-name/BOOT");
+	package_extract_dir("Hulk/Kernel/Hulk-Kernel/modules", "/system/lib/modules");
 endif;
 
 
@@ -41,7 +43,6 @@ if
 		then
     ui_print("Installing Stock Keyboard...");
 	package_extract_dir("Hulk/Keyboard/S4", "/system/app");
-	symlink("/system/lib/libswiftkeysdk-java.so", "/system/app/SamsungIME/lib/arm/libswiftkeysdk-java.so");
 endif;
 
 if
@@ -49,11 +50,6 @@ if
 		then
     ui_print("Installing S6 Keyboard...");
 	package_extract_dir("Hulk/Keyboard/S6", "/system/app");
-	symlink("/system/lib/libDioDict3EngineNativeFrame.so", "/system/app/SecDict2Zero/lib/arm/libDioDict3EngineNativeFrame.so");
-	symlink("/system/lib/libdioiculemma.so", "/system/app/SecDict2Zero/lib/arm/libdioiculemma.so");
-	symlink("/system/lib/libjma.so", "/system/app/SecDict2Zero/lib/arm/libjma.so");
-	symlink("/system/lib/libnltk.so", "/system/app/SecDict2Zero/lib/arm/libnltk.so");
-	symlink("/system/lib/libstlport_shared.so", "/system/app/SecDict2Zero/lib/arm/libstlport_shared.so");	
 endif;
 
 #-- SUB WINDOW 4
@@ -201,13 +197,6 @@ if
      then
     ui_print("Installing Galaxy S6 SHealth...");
 	package_extract_dir("Hulk/Shealth/S6", "/system/");
-	symlink("/system/lib/libPedometer.so", "/system/priv-app/SHealth4/lib/arm/libPedometer.so");
-	symlink("/system/lib/libPlatformStrings.so", "/system/priv-app/HealthService/lib/arm/libPlatformStrings.so");
-	symlink("/system/lib/libPlatformStrings.so", "/system/priv-app/SHealth4/lib/arm/libPlatformStrings.so");
-	symlink("/system/lib/libsaiv.so", "/system/priv-app/SHealth4/lib/arm/libsaiv.so");
-	symlink("/system/lib/libSensorNativeProtocol.so", "/system/priv-app/HealthService/lib/arm/libSensorNativeProtocol.so");
-	symlink("/system/lib/libSensorNativeProtocol.so", "/system/priv-app/SHealth4/lib/arm/libSensorNativeProtocol.so");
-	symlink("/system/lib/lib_stressanalyzer_v03_jni.so", "/system/priv-app/SHealth4/lib/arm/lib_stressanalyzer_v03_jni.so");
 endif;
 
 #-- SUB WINDOW 13
@@ -257,7 +246,6 @@ if
      then
     ui_print("Installing S6 VoiceRecorder...");
 	package_extract_dir("Hulk/Voicerecorder/S6", "/system");
-	symlink("/system/lib/liblifevibes_mediashare_hw_jni.so", "/system/priv-app/VoiceNote4Z_32/lib/arm/liblifevibes_mediashare_hw_jni.so");
 endif;
 
 #-- Xposed App
@@ -283,6 +271,7 @@ symlink("/system/lib/libdefcontainer_jni.so", "/system/priv-app/DefaultContainer
 symlink("/system/lib/libjni_pacprocessor.so", "/system/app/PacProcessor/lib/arm/libjni_pacprocessor.so");
 symlink("/system/lib/libnfc_nci_jni.so", "/system/app/NfcNci/lib/arm/libnfc_nci_jni.so");
 symlink("/system/lib/libprintspooler_jni.so", "/system/app/SPrintSpooler/lib/arm/libprintspooler_jni.so");
+symlink("/system/lib/libswiftkeysdk-java.so", "/system/app/SamsungIME/lib/arm/libswiftkeysdk-java.so");
 symlink("/system/xbin/busybox", "/system/bin/busybox");
 symlink("/system/xbin/su", "/system/bin/su");
 symlink("toolbox", "/system/bin/cat");
