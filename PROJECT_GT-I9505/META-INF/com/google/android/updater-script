@@ -252,6 +252,22 @@ if
 	package_extract_dir("xposed/app", "/system/app");
 endif;
 
+#-- Modules
+
+if
+    file_getprop("/tmp/aroma/window1.prop","selected.1") == "1"
+     then
+    ui_print("Installing normal modules...");
+	package_extract_dir("Hulk/Kernel/Stock/system", "/system");
+endif;
+	
+if
+    file_getprop("/tmp/aroma/window1.prop","selected.1") == "2"
+     then
+    ui_print("Installing special modules...");
+	package_extract_dir("Hulk/Kernel/Hulk-Kernel/system", "/system");
+endif;
+
 ui_print("Generating symlinks");
 symlink("app_process32", "/system/bin/app_process");
 symlink("dalvikvm32", "/system/bin/dalvikvm");
@@ -475,7 +491,7 @@ if
      then
     ui_print("Installing Stock Kernel...");
 	package_extract_file("Hulk/Kernel/Stock/boot.img", "/dev/block/platform/msm_sdcc.1/by-name/boot");
-	package_extract_dir("Hulk/Kernel/Stock/modules", "/system/lib/modules");
+	package_extract_dir("Hulk/Kernel/Stock/system", "/system");
 endif;
 	
 if
