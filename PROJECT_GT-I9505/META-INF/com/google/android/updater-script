@@ -451,7 +451,7 @@ set_metadata("/system/xbin/supolicy", "uid", 0, "gid", 0, "mode", 0755, "capabil
 
 ui_print("Rooting device");
 #run_program("/system/xbin/busybox", "--install", "-s", "/system/xbin");
-#run_program("/system/xbin/su", "--install");
+run_program("/system/xbin/su", "--install");
 package_extract_dir("supersu", "/tmp/supersu");
 run_program("/sbin/busybox", "unzip", "/tmp/supersu/supersu.zip", "META-INF/com/google/android/*", "-d", "/tmp/supersu");
 run_program("/sbin/busybox", "sh", "/tmp/supersu/META-INF/com/google/android/update-binary", "dummy", "1", "/tmp/supersu/supersu.zip");
