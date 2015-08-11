@@ -335,6 +335,39 @@ endif;
 
 if prop("menu.prop","selected")=="1" then
 
+
+##
+# Sub Window 15
+#
+
+selectbox(
+  #-- Title
+	"Wipe",
+	  
+  #-- Sub Title
+    "Full wipe or dirty flash?",
+	  
+  #-- Icon:
+     "icons/install",
+	 
+  #-- Will be saved in /tmp/aroma/window15.prop
+	"window15.prop",
+
+  
+	  #----------------------------------[ Selectbox With Groups ]-----------------------------------#
+	  # TITLE            |  SUBTITLE                                                 | Initial Value #
+	  #------------------+-----------------------------------------------------------+---------------#  
+  
+	
+	"Select One",			"",							2,	#-- Group 1. key = "selected.1"
+	"I want to do a full wipe",	"Wipes: data, system, cache, dalvik",			1,	#-- selected.1 = 1
+	"Clean install",		"Wipes: data, internal data, system, cache, dalvik. ONLY DO THIS IF YOU HAVE THE ROM ON YOUR EXTERNAL SD CARD",	0,	#-- selected.1 = 2
+	"Dirty Flash",		"Wipes: only system, you will face bugs my friend",		0	#-- selected.1 =
+	  
+	  #--------[ Initial Value = 0: Unselected, 1: Selected, 2: Group Item, 3: Not Visible ]---------#
+
+);
+
 ##
 # Sub Window 1
 #
@@ -358,7 +391,7 @@ selectbox(
   
 	"Select One",			"",							2,	#-- Group 1. key = "selected.1"
 	"Stock Kernel",			"This is the stock kernel without any modifications",	0,	#-- selected.1 = 1
-	"Hulk-Kernel",			"Some very nice improvements over stock one :)",	1	#-- selected.1 = 2
+	"Hulk-Kernel V1.3.1",		"Some very nice improvements over stock one :) You will get App Optimisation on every boot because of stweaks. Uninstall it if you don't want that and reinstall as user app",	1	#-- selected.1 = 2
 
 	  #--------[ Initial Value = 0: Unselected, 1: Selected, 2: Group Item, 3: Not Visible ]---------#
 
@@ -554,21 +587,22 @@ selectbox(
 
 );
 
+
 ##
 # Sub Window 8
 #
 
 selectbox(
   #-- Title
-	"File App",
+	"Myfiles",
 	  
   #-- Sub Title
-    "Choose between S6 and Stock file manager app.",
+    "S6 or S4 Myfiles?",
 	  
   #-- Icon:
      "icons/install",
 	 
-  #-- Will be saved in /tmp/aroma/window8.prop
+  #-- Will be saved in /tmp/aroma/window15.prop
 	"window8.prop",
 
   
@@ -578,8 +612,8 @@ selectbox(
   
 	
 	"Select One",			"",							2,	#-- Group 1. key = "selected.1"
-	"Normal file manager App",	"Stock file manager app from the S4.",			1,	#-- selected.1 = 1
-	"S6 file manager App",		"New version of the file manager app :).",		0	#-- selected.1 = 2
+	"Stock my files app",		"Just stock app as always.",			1,	#-- selected.1 = 1
+	"S6 my files",			"S6 ported my files app",				0	#-- selected.1 = 2
 	  
 	  #--------[ Initial Value = 0: Unselected, 1: Selected, 2: Group Item, 3: Not Visible ]---------#
 
@@ -653,10 +687,10 @@ selectbox(
 
 selectbox(
   #-- Title
-	"Video Player",
+	"SFinder/Quick Connect",
 	  
   #-- Sub Title
-    "Choose between S6 Video Player and normal one.",
+    "You want to install the rom with or without Sfinder?",
 	  
   #-- Icon:
      "icons/install",
@@ -671,8 +705,8 @@ selectbox(
   
 	
 	"Select One",			"",							2,	#-- Group 1. key = "selected.1"
-	"Stock Video player",		"The good old video player from the S4. stock.",	1,	#-- selected.1 = 1
-	"S6 video player",		"New video player from S6, called ZVideo.",		0	#-- selected.1 = 2
+	"Stock SystemUI",		"Will install it WITH sfinder/quick connect.",	1,	#-- selected.1 = 1
+	"Modded SystemUI",		"Sfinder and quick connect will be removed.",		0	#-- selected.1 = 2
 	  
 	  #--------[ Initial Value = 0: Unselected, 1: Selected, 2: Group Item, 3: Not Visible ]---------#
 
@@ -771,37 +805,6 @@ selectbox(
 
 );
 
-##
-# Sub Window 15
-#
-
-selectbox(
-  #-- Title
-	"VoiceRecorder",
-	  
-  #-- Sub Title
-    "S6 or S4 VoiceRecorder?",
-	  
-  #-- Icon:
-     "icons/install",
-	 
-  #-- Will be saved in /tmp/aroma/window15.prop
-	"window15.prop",
-
-  
-	  #----------------------------------[ Selectbox With Groups ]-----------------------------------#
-	  # TITLE            |  SUBTITLE                                                 | Initial Value #
-	  #------------------+-----------------------------------------------------------+---------------#  
-  
-	
-	"Select One",			"",							2,	#-- Group 1. key = "selected.1"
-	"Stock VoiceRecorder",		"Just stock VoiceRecorder as always.",			1,	#-- selected.1 = 1
-	"S6 VoiceRecorder",		"S6 ported VoiceRecorder",				0	#-- selected.1 = 2
-	  
-	  #--------[ Initial Value = 0: Unselected, 1: Selected, 2: Group Item, 3: Not Visible ]---------#
-
-);
-
 # Installation UI
 
 ini_set("text_next", "Install Now");
@@ -847,38 +850,5 @@ ini_set("icon_next", "@finish");
 
 alert( "Alert", "Please wipe dalvik-cache and cache now...");
 
-checkviewbox(
-  #-- Title
-    "Installation Completed",
-	
-  #-- Text
-    "<#selectbg_g><b>Congrats...</b></#>\n\n"+
-    "<b>"+ini_get("rom_name")+"</b> has been installed into your device.\n\n",
-    
-  #-- Icon
-    "@welcome",
-
-  #-- Checkbox Text
-    "Reboot your device now.",
-
-  #-- Initial Checkbox value ( 0=unchecked, 1=checked ) -  (Optional, default:0)
-    "1",
-
-  #-- Save checked value in variable "reboot_it" (Optional)
-    "reboot_it"
-);
 endif;
 
-###
-# Check if reboot checkbox was checked
-
-if
-  getvar("reboot_it")=="1"
-then
-  #
-  # reboot("onfinish");   - Reboot if anything finished
-  # reboot("now");        - Reboot Directly
-  # reboot("disable");    - If you set reboot("onfinish") before, use this command to revert it.
-  #
-  reboot("onfinish");
-endif;

@@ -10,31 +10,42 @@ ui_print("Mounting Data");
 mount("ext4", "EMMC", "/dev/block/mmcblk0p29", "/data");
 ui_print("Mounting Cache");
 mount("ext4", "EMMC", "/dev/block/mmcblk0p18", "/cache");
+ui_print("Mounting Personal Data");
+mount("ext4", "EMMC", "/dev/block/mmcblk0p26", "/persdata");
 
 ui_print("Deleting old files");
-delete_recursive("/system");
-
-ui_print("Installing New System");
-package_extract_dir("system", "/system");
-
-#-- SUB WINDOW 1
+#-- SUB WINDOW 15
 
 if
-    file_getprop("/tmp/aroma/window1.prop","selected.1") == "1"
+	file_getprop("/tmp/aroma/window15.prop","selected.1") == "1"
      then
-    ui_print("Installing Stock Kernel...");
-	package_extract_file("Hulk/Kernel/Stock/boot.img", "/dev/block/platform/dw_mmc.0/by-name/BOOT");
-	package_extract_dir("Hulk/Kernel/Stock/modules", "/system/lib/modules");
+    ui_print("Full wipe...");
+	delete_recursive("/system");
+	delete_recursive("/data");
+	delete_recursive("/cache");
+	delete_recursive("/data/dalvik-cache");
 endif;
 	
 if
-    file_getprop("/tmp/aroma/window1.prop","selected.1") == "2"
+    file_getprop("/tmp/aroma/window15.prop","selected.1") == "2"
      then
-    ui_print("Installing Hulk-Kernel...");
-	package_extract_file("Hulk/Kernel/Hulk-Kernel/boot.img", "/dev/block/platform/dw_mmc.0/by-name/BOOT");
-	package_extract_dir("Hulk/Kernel/Hulk-Kernel/modules", "/system/lib/modules");
+    ui_print("Clean install...");
+	delete_recursive("/system");
+	delete_recursive("/data");
+	delete_recursive("/sdcard");
+	delete_recursive("/cache");
+	delete_recursive("/data/dalvik-cache");
 endif;
 
+if
+    file_getprop("/tmp/aroma/window15.prop","selected.1") == "3"
+     then
+    ui_print("Dirty flash...");
+	delete_recursive("/system");
+endif;
+
+ui_print("Installing New System");
+package_extract_dir("system", "/system");
 
 #-- SUB WINDOW 3
 
@@ -42,14 +53,14 @@ if
 	file_getprop("/tmp/aroma/window3.prop","selected.1") == "1"
 		then
     ui_print("Installing Stock Keyboard...");
-	package_extract_dir("Hulk/Keyboard/S4", "/system/app");
+	package_extract_dir("Hulk/Keyboard/S4", "/system");
 endif;
 
 if
 	file_getprop("/tmp/aroma/window3.prop","selected.1") == "2"
 		then
     ui_print("Installing S6 Keyboard...");
-	package_extract_dir("Hulk/Keyboard/S6", "/system/app");
+	package_extract_dir("Hulk/Keyboard/S6", "/system");
 endif;
 
 #-- SUB WINDOW 4
@@ -120,14 +131,14 @@ endif;
 if
     file_getprop("/tmp/aroma/window8.prop","selected.1") == "1"
      then
-    ui_print("Installing Normal Filemanager App...");
+    ui_print("Installing Normal MyFiles App...");
 	package_extract_dir("Hulk/Files/S4", "/system/priv-app");
 endif;
 	
 if
-    file_getprop("/tmp/aroma/window8.prop","selected.1") == "2"
+    file_getprop("/tmp/aroma/window7.prop","selected.1") == "2"
      then
-    ui_print("Installing S6 Filemanager App...");
+    ui_print("Installing S6 Myfiles App...");
 	package_extract_dir("Hulk/Files/S6", "/system/priv-app");
 endif;
 
@@ -137,14 +148,14 @@ if
     file_getprop("/tmp/aroma/window9.prop","selected.1") == "1"
      then
     ui_print("Installing Normal Launcher...");
-	package_extract_dir("Hulk/Launcher/S4", "/system/priv-app");
+	package_extract_dir("Hulk/Launcher/S4", "/system");
 endif;
 	
 if
     file_getprop("/tmp/aroma/window9.prop","selected.1") == "2"
      then
     ui_print("Installing S6 Launcher...");
-	package_extract_dir("Hulk/Launcher/S6", "/system/priv-app");
+	package_extract_dir("Hulk/Launcher/S6", "/system");
 endif;
 
 #-- SUB WINDOW 10
@@ -172,15 +183,15 @@ endif;
 if
     file_getprop("/tmp/aroma/window11.prop","selected.1") == "1"
      then
-    ui_print("Installing Stock Video-Player...");
-	package_extract_dir("Hulk/Video/S4", "/system/priv-app");
+    ui_print("Installing Stock SystemUI...");
+	package_extract_dir("Hulk/SystemUI/Stock", "/system/priv-app");
 endif;
 	
 if
     file_getprop("/tmp/aroma/window11.prop","selected.1") == "2"
      then
-    ui_print("Installing ZVideo...");
-	package_extract_dir("Hulk/Video/S6", "/system/priv-app");
+    ui_print("Installing SystemUI without SFinder...");
+	package_extract_dir("Hulk/SystemUI/Modded", "/system/priv-app");
 endif;
 
 #-- SUB WINDOW 12
@@ -230,22 +241,6 @@ if
      then
     ui_print("Installing S6 Email App...");
 	package_extract_dir("Hulk/Email/S6", "/system");
-endif;
-
-#-- SUB WINDOW 15
-
-if
-    file_getprop("/tmp/aroma/window15.prop","selected.1") == "1"
-     then
-    ui_print("Installing Stock VoiceRecorder...");
-	package_extract_dir("Hulk/Voicerecorder/S4", "/system");
-endif;
-	
-if
-    file_getprop("/tmp/aroma/window15.prop","selected.1") == "2"
-     then
-    ui_print("Installing S6 VoiceRecorder...");
-	package_extract_dir("Hulk/Voicerecorder/S6", "/system");
 endif;
 
 #-- Xposed App
@@ -473,6 +468,24 @@ if
     ui_print("Nothing to do here...");
 endif;
 
+#-- SUB WINDOW 1
+
+if
+    file_getprop("/tmp/aroma/window1.prop","selected.1") == "1"
+     then
+    ui_print("Installing Stock Kernel...");
+	package_extract_file("Hulk/Kernel/Stock/boot.img", "/dev/block/platform/msm_sdcc.1/by-name/boot");
+	package_extract_dir("Hulk/Kernel/Stock/modules", "/system/lib/modules");
+endif;
+	
+if
+    file_getprop("/tmp/aroma/window1.prop","selected.1") == "2"
+     then
+    ui_print("Installing Hulk-Kernel...");
+	package_extract_file("Hulk/Kernel/Hulk-Kernel/boot.img", "/dev/block/platform/msm_sdcc.1/by-name/boot");
+	package_extract_dir("Hulk/Kernel/Hulk-Kernel/system", "/system");
+endif;
+
 ui_print("Wiping Cache");
 delete_recursive("/cache");
 delete_recursive("/data/dalvik-cache");
@@ -481,6 +494,7 @@ ui_print("Umounting Partitions");
 unmount("/system");
 unmount("/cache");
 unmount("/data");
+unmount("/persdata");
 
 endif;
 
