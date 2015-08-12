@@ -123,7 +123,7 @@ if
     file_getprop("/tmp/aroma/window7.prop","selected.1") == "2"
      then
     ui_print("Installing S6 Gallery App...");
-	package_extract_dir("Hulk/Gallery/S6", "/system/priv-app");
+	package_extract_dir("Hulk/Gallery/S6", "/system");
 endif;
 
 #-- SUB WINDOW 8
@@ -136,7 +136,7 @@ if
 endif;
 	
 if
-    file_getprop("/tmp/aroma/window7.prop","selected.1") == "2"
+    file_getprop("/tmp/aroma/window8.prop","selected.1") == "2"
      then
     ui_print("Installing S6 Myfiles App...");
 	package_extract_dir("Hulk/Files/S6", "/system/priv-app");
