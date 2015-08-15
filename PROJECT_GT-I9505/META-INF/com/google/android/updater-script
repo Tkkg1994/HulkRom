@@ -79,6 +79,12 @@ if
 	package_extract_dir("Hulk/Weather/S6", "/system/app");
 endif;
 
+if
+    file_getprop("/tmp/aroma/window4.prop","selected.1") == "3"
+     then
+    ui_print("Installing nothing...");
+endif;
+
 #-- SUB WINDOW 5
 
 if
@@ -93,6 +99,12 @@ if
      then
     ui_print("Installing S6 Music App...");
 	package_extract_dir("Hulk/Music/S6", "/system/priv-app");
+endif;
+
+if
+    file_getprop("/tmp/aroma/window5.prop","selected.1") == "3"
+     then
+    ui_print("Installing nothing...");
 endif;
 
 #-- SUB WINDOW 6
@@ -126,6 +138,12 @@ if
 	package_extract_dir("Hulk/Gallery/S6", "/system");
 endif;
 
+if
+    file_getprop("/tmp/aroma/window7.prop","selected.1") == "3"
+     then
+    ui_print("Installing nothing...");
+endif;
+
 #-- SUB WINDOW 8
 
 if
@@ -140,6 +158,12 @@ if
      then
     ui_print("Installing S6 Myfiles App...");
 	package_extract_dir("Hulk/Files/S6", "/system/priv-app");
+endif;
+
+if
+    file_getprop("/tmp/aroma/window8.prop","selected.1") == "3"
+     then
+    ui_print("Installing nothing...");
 endif;
 
 #-- SUB WINDOW 9
@@ -178,6 +202,12 @@ if
 	package_extract_dir("Hulk/Browser/S6", "/system");
 endif;
 
+if
+    file_getprop("/tmp/aroma/window10.prop","selected.1") == "3"
+     then
+    ui_print("Installing nothing...");
+endif;
+
 #-- SUB WINDOW 11
 
 if
@@ -210,6 +240,12 @@ if
 	package_extract_dir("Hulk/Shealth/S6", "/system/");
 endif;
 
+if
+    file_getprop("/tmp/aroma/window12.prop","selected.1") == "3"
+     then
+    ui_print("Installing nothing...");
+endif;
+
 #-- SUB WINDOW 13
 
 if
@@ -224,6 +260,12 @@ if
      then
     ui_print("Installing S6 Calculator...");
 	package_extract_dir("Hulk/Calculator/S6", "/system/app");
+endif;
+
+if
+    file_getprop("/tmp/aroma/window13.prop","selected.1") == "3"
+     then
+    ui_print("Installing nothing...");
 endif;
 
 #-- SUB WINDOW 14
@@ -241,6 +283,34 @@ if
      then
     ui_print("Installing S6 Email App...");
 	package_extract_dir("Hulk/Email/S6", "/system");
+endif;
+
+if
+    file_getprop("/tmp/aroma/window14.prop","selected.1") == "3"
+     then
+    ui_print("Installing nothing...");
+endif;
+
+#-- SUB WINDOW 16
+
+if
+    file_getprop("/tmp/aroma/window16.prop","selected.1") == "1"
+     then
+    ui_print("Installing Stock optical reader...");
+	package_extract_dir("Hulk/Reader/S4", "/system/app");
+endif;
+	
+if
+    file_getprop("/tmp/aroma/window16.prop","selected.1") == "2"
+     then
+    ui_print("Installing S6 optical reader...");
+	package_extract_dir("Hulk/Reader/S6", "/system/app");
+endif;
+
+if
+    file_getprop("/tmp/aroma/window16.prop","selected.1") == "3"
+     then
+    ui_print("Installing nothing...");
 endif;
 
 #-- Xposed App

@@ -362,8 +362,7 @@ selectbox(
 	"Select One",			"",							2,	#-- Group 1. key = "selected.1"
 	"I want to do a full wipe",	"Wipes: data, system, cache, dalvik",			1,	#-- selected.1 = 1
 	"Clean install",		"Wipes: data, internal data, system, cache, dalvik. ONLY DO THIS IF YOU HAVE THE ROM ON YOUR EXTERNAL SD CARD",	0,	#-- selected.1 = 2
-	"Dirty Flash",		"Wipes: only system, you will face bugs my friend",		0	#-- selected.1 =
-	  
+	"Dirty Flash",		"Wipes: only system, you will face bugs my friend",		0	#-- selected.1 = 3
 	  #--------[ Initial Value = 0: Unselected, 1: Selected, 2: Group Item, 3: Not Visible ]---------#
 
 );
@@ -488,7 +487,8 @@ selectbox(
 	
 	"Select One",			"",							2,	#-- Group 1. key = "selected.1"
 	"Stock Weather Widget",		"Normal Widget, as always.",				1,	#-- selected.1 = 1
-	"S6 Weather Widget", 		"S6 ported Weather Widget.",				0	#-- selected.1 = 2
+	"S6 Weather Widget", 		"S6 ported Weather Widget.",				0,	#-- selected.1 = 2
+	"Nothing",			"Don't want any of them",				0	#-- selected.1 = 3
 	  
 	  #--------[ Initial Value = 0: Unselected, 1: Selected, 2: Group Item, 3: Not Visible ]---------#
 
@@ -519,7 +519,8 @@ selectbox(
 	
 	"Select One",			"",							2,	#-- Group 1. key = "selected.1"
 	"Normal Music App",		"Stock Music app from the S4.",				1,	#-- selected.1 = 1
-	"S6 Music App",			"Here are some bugs possible!.",			0	#-- selected.1 = 2
+	"S6 Music App",			"Here are some bugs possible!.",			0,	#-- selected.1 = 2
+	"Nothing",			"Don't want any of them",				0	#-- selected.1 = 3
 	  
 	  #--------[ Initial Value = 0: Unselected, 1: Selected, 2: Group Item, 3: Not Visible ]---------#
 
@@ -581,7 +582,8 @@ selectbox(
 	
 	"Select One",			"",							2,	#-- Group 1. key = "selected.1"
 	"Normal Gallery App",		"Stock Gallery app from the S4.",			1,	#-- selected.1 = 1
-	"S6 Gallery App",		"S6 Gallery, maybe quiet similar to S4.",		0	#-- selected.1 = 2
+	"S6 Gallery App",		"S6 Gallery, maybe quiet similar to S4.",		0,	#-- selected.1 = 2
+	"Nothing",			"Don't want any of them",				0	#-- selected.1 = 3
 	  
 	  #--------[ Initial Value = 0: Unselected, 1: Selected, 2: Group Item, 3: Not Visible ]---------#
 
@@ -612,8 +614,9 @@ selectbox(
   
 	
 	"Select One",			"",							2,	#-- Group 1. key = "selected.1"
-	"Stock my files app",		"Just stock app as always.",			1,	#-- selected.1 = 1
-	"S6 my files",			"S6 ported my files app",				0	#-- selected.1 = 2
+	"Stock my files app",		"Just stock app as always.",				1,	#-- selected.1 = 1
+	"S6 my files",			"S6 ported my files app",				0,	#-- selected.1 = 2
+	"Nothing",			"Don't want any of them",				0	#-- selected.1 = 3
 	  
 	  #--------[ Initial Value = 0: Unselected, 1: Selected, 2: Group Item, 3: Not Visible ]---------#
 
@@ -675,7 +678,8 @@ selectbox(
 	
 	"Select One",			"",								2,	#-- Group 1. key = "selected.1"
 	"Normal browser",		"Stock browser app from the S4. Stable and without bugs.",	1,	#-- selected.1 = 1
-	"S6 browser",			"This can may have some bugs.",					0       #-- selected.1 = 2
+	"S6 browser",			"This can may have some bugs.",					0,	#-- selected.1 = 2
+	"Nothing",			"Don't want any of them",					0	#-- selected.1 = 3
 	  
 	  #--------[ Initial Value = 0: Unselected, 1: Selected, 2: Group Item, 3: Not Visible ]---------#
 
@@ -737,7 +741,8 @@ selectbox(
 	
 	"Select One",			"",							2,	#-- Group 1. key = "selected.1"
 	"Stock SHealth",		"Just as always",					1,	#-- selected.1 = 1
-	"S6 SHealth",			"With more features and options",			0	#-- selected.1 = 2
+	"S6 SHealth",			"With more features and options",			0,	#-- selected.1 = 2
+	"Nothing",			"Don't want any of them",				0	#-- selected.1 = 3
 	  
 	  #--------[ Initial Value = 0: Unselected, 1: Selected, 2: Group Item, 3: Not Visible ]---------#
 
@@ -768,7 +773,8 @@ selectbox(
 	
 	"Select One",			"",							2,	#-- Group 1. key = "selected.1"
 	"Stock Calculator",		"Well known calculator",				1,	#-- selected.1 = 1
-	"S6 Calculator",		"Looks a little bit more material design",		0	#-- selected.1 = 2
+	"S6 Calculator",		"Looks a little bit more material design",		0,	#-- selected.1 = 2
+	"Nothing",			"Don't want any of them",				0	#-- selected.1 = 3
 	  
 	  #--------[ Initial Value = 0: Unselected, 1: Selected, 2: Group Item, 3: Not Visible ]---------#
 
@@ -799,7 +805,40 @@ selectbox(
 	
 	"Select One",		"",							2,	#-- Group 1. key = "selected.1"
 	"Stock Email",		"Good old Email App",					1,	#-- selected.1 = 1
-	"S6 Email",		"New Email app from the S6",				0	#-- selected.1 = 2
+	"S6 Email",		"New Email app from the S6",				0,	#-- selected.1 = 2
+	"Nothing",		"Don't want any of them",				0	#-- selected.1 = 3
+	  
+	  #--------[ Initial Value = 0: Unselected, 1: Selected, 2: Group Item, 3: Not Visible ]---------#
+
+);
+
+##
+# Sub Window 16
+#
+
+selectbox(
+  #-- Title
+	"Optical Reader",
+	  
+  #-- Sub Title
+    "Select between S4 and S6 reader",
+	  
+  #-- Icon:
+     "icons/install",
+	 
+  #-- Will be saved in /tmp/aroma/window16.prop
+	"window16.prop",
+
+  
+	  #----------------------------------[ Selectbox With Groups ]-----------------------------------#
+	  # TITLE            |  SUBTITLE                                                 | Initial Value #
+	  #------------------+-----------------------------------------------------------+---------------#  
+  
+	
+	"Select One",			"",							2,	#-- Group 1. key = "selected.1"
+	"S4 optical reader",		"Normal Optical Reader",				1,	#-- selected.1 = 1
+	"S6 optical reader",		"Updated to samsung s6 reader",				0,	#-- selected.1 = 2
+	"Nothing",			"Don't want any of them",				0	#-- selected.1 = 3
 	  
 	  #--------[ Initial Value = 0: Unselected, 1: Selected, 2: Group Item, 3: Not Visible ]---------#
 
