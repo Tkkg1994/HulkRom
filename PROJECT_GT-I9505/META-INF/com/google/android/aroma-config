@@ -1,0 +1,893 @@
+﻿########################################################## AROMA CONFIG ##########################################################
+
+##
+# Fix Colorspace Issue
+# You can use one of following values:
+#   "rgba", "abgr", "argb", "bgra"
+
+# ini_set("force_colorspace","rgba");
+
+##
+# Screen Resolution
+#
+
+# ini_set("dp","1"); #-- LDPI ( 240x320 / QVGA )
+# ini_set("dp","2"); #-- MDPI ( 340x480 / HVGA )
+# ini_set("dp","3"); #-- HDPI ( 480x800 / WVGA )
+# ini_set("dp","4"); #-- XHDPI ( 1280x720 / WVGA )
+ini_set("dp","5"); #-- XXHDPI ( 1920x1080 / WVGA )
+
+##
+# Initializing Information
+#
+
+ini_set("rom_name",             "Hulk-Rom™ ");
+ini_set("rom_version",          "V1.1 FINAL");
+ini_set("rom_author",           "Tkkg1994");
+ini_set("rom_device",           "GT-I9505");
+ini_set("rom_date",             "15.08.2015");
+
+
+##
+# Show Simple Splash
+#
+
+splash(
+  #-- Duration 4000ms / 4 seconds
+    4000,
+  
+  #-- <AROMA Resource Dir>/SPLASH.png
+    "SPLASH"
+);
+
+
+
+##
+# Font Selection
+#
+
+fontresload( "0", "ttf/Roboto-Regular.ttf;ttf/DroidSansArabic.ttf;ttf/DroidSansFallback.ttf;", "12" ); #-- Use sets of font (Font Family)
+
+##
+# SHOW LANGUAGE SELECTION
+#
+
+selectbox(
+  #-- Title
+    "Select Language",
+  
+  #-- Sub Title
+    "Please select installer language that you want to use while Installing ROM",
+  
+  #-- Icon:
+    "@default",
+  
+  #-- Will be saved in /tmp/aroma/lang.prop
+    "lang.prop",
+  
+    "English",            "Welcome to Installer",                                        1,      #-- selected.0 = 1
+    "Indonesian",         "Selamat datang di Installer",                                 0,      #-- selected.0 = 2
+    "Espanol",            "Bienvenido al Instalador",                                    0,      #-- selected.0 = 3
+    "Simplified Chinesse","欢迎到安装",                                                   0,      #-- selected.0 = 4
+    "Arabic",             "مرحبا بكم في المثبت",                                         0,      #-- selected.0 = 5        
+    "French",             "Bienvenue dans l'installateur",                               0,      #-- selected.0 = 6
+    "Russian",            "Добро пожаловать в установщик",                               0,      #-- selected.0 = 7
+	"Italian",            "Benvenuti Installer",                                         0,      #-- selected.0 = 8
+	"Hebrew",             "ברוכים הבאים להתקנה",							    	     0,		 #-- selected.0 = 9
+	"Germany",            "Willkommen bei Installer",									 0 		 #-- selected.0 = 10
+
+);
+
+##
+# SET LANGUAGE & FONT FAMILY
+#
+
+if prop("lang.prop","selected.0")=="1" then
+  loadlang("langs/en.lang");
+  fontresload( "0", "ttf/Roboto-Regular.ttf", "12" ); #-- "0" = Small Font ( Look at Fonts & UNICODE Demo Below )
+  fontresload( "1", "ttf/Roboto-Regular.ttf", "18" ); #-- "1" = Big Font
+endif;
+
+if prop("lang.prop","selected.0")=="2" then
+  loadlang("langs/id.lang");
+  fontresload( "0", "ttf/Roboto-Regular.ttf", "12" );
+  fontresload( "1", "ttf/Roboto-Regular.ttf", "18" );
+endif;
+
+if prop("lang.prop","selected.0")=="3" then
+  loadlang("langs/es.lang");
+  fontresload( "0", "ttf/Roboto-Regular.ttf", "12" );
+  fontresload( "1", "ttf/Roboto-Regular.ttf", "18" );
+endif;
+
+if prop("lang.prop","selected.0")=="4" then
+  loadlang("langs/cn.lang");
+  fontresload( "0", "ttf/DroidSansFallback.ttf;ttf/Roboto-Regular.ttf", "12" ); 
+  fontresload( "1", "ttf/DroidSansFallback.ttf;ttf/Roboto-Regular.ttf", "18" );
+endif;
+
+if prop("lang.prop","selected.0")=="5" then
+  loadlang("langs/ar.lang");
+  fontresload( "0", "ttf/DroidSansArabic.ttf;ttf/Roboto-Regular.ttf", "12" ); 
+  fontresload( "1", "ttf/DroidSansArabic.ttf;ttf/Roboto-Regular.ttf", "18" );
+endif;
+
+if prop("lang.prop","selected.0")=="6" then
+  loadlang("langs/fr.lang");
+  fontresload( "0", "ttf/Roboto-Regular.ttf", "12" );
+  fontresload( "1", "ttf/Roboto-Regular.ttf", "18" );
+endif;
+
+if prop("lang.prop","selected.0")=="7" then
+  loadlang("langs/ru.lang");
+  fontresload( "0", "ttf/Roboto-Regular.ttf", "12" );
+  fontresload( "1", "ttf/Roboto-Regular.ttf", "18" );
+endif;
+
+if prop("lang.prop","selected.0")=="8" then
+  loadlang("langs/it.lang");
+  fontresload( "0", "ttf/Roboto-Regular.ttf", "12" );
+  fontresload( "1", "ttf/Roboto-Regular.ttf", "18" );
+endif;
+
+if prop("lang.prop","selected.0")=="9" then
+  loadlang("langs/he.lang");
+  fontresload( "0", "ttf/Roboto-Regular.ttf", "12" );
+  fontresload( "1", "ttf/Roboto-Regular.ttf", "18" );
+endif;
+
+if prop("lang.prop","selected.0")=="10" then
+  loadlang("langs/de.lang");
+  fontresload( "0", "ttf/Roboto-Regular.ttf", "12" );
+  fontresload( "1", "ttf/Roboto-Regular.ttf", "18" );
+endif;
+
+##
+#   SHOW ROM/Mod INFORMATION
+#
+
+viewbox(
+  #-- Title
+    "<~welcome.title>",
+  
+  #-- Text
+    "<~welcome.text1> <b>"+
+	  #-- Get Config Value
+	  ini_get("rom_name")+
+	"</b> <~common.for> <b>"+ini_get("rom_device")+"</b>.\n\n"+
+    
+    "<~welcome.text2>\n\n"+
+	
+      "  <~welcome.version>\t: <b><#selectbg_g>"+ini_get("rom_version")+"</#></b>\n"+
+      "  <~welcome.codename>\t\t: <b><#selectbg_g> </#></b>\n"+
+	  "  <~welcome.updated>\t: <b><#selectbg_g>"+ini_get("rom_date")+"</#></b>\n\n\n"+
+
+    "<~welcome.next>",
+  
+  #-- Icon
+    "@welcome"
+);
+
+##
+# LICENSE
+#
+
+agreebox(
+  #-- Title
+    "Hulk-Rom™",
+  
+  #-- Subtitle / Description
+    "Read Carefully",
+  
+  #-- Icon:
+    "@license",
+  
+  #-- Text Content 
+    resread("license.txt"),
+  
+  #-- Checkbox Text
+    "Have you really read it and are agree?",
+  
+  #-- Unchecked Alert Message
+    "You've to agree!"
+);
+
+##
+# MAIN MENU- INSTALLER n MISC
+#
+menubox(
+  #-- Title
+    "Hulk-Rom™ Menu",
+  
+  #-- Sub Title
+    "Please select from the Menu Below to Modify the required features",
+  
+  #-- Icon
+    "@apps",
+    
+  #-- Will be saved in /tmp/aroma/menu.prop
+    "menu.prop",
+    
+     #-------------------------+-----------------[ Menubox Items ]-------------------------+---------------#
+     # TITLE                   |  SUBTITLE                                                 |   Item Icons  #
+     #-------------------------+-----------------------------------------------------------+---------------#	
+	
+    "Installation",        "ROM Installation with Various Features - RECOMMENDED",      "@install",      #-- selected = 1
+    "System Info",                "Get and show device/partition informations",                "@info",         #-- selected = 2
+    "ChangeLog",                  "Hulk-Rom ChangeLog",                                         "@agreement",    #-- selected = 3
+    "Quit Install",               "Leaving perfect LP Setup and trying another ROM :(",     "@install"       #-- selected = 4
+
+);
+
+##
+# System Info 
+#
+
+if prop("menu.prop","selected")=="2" then
+
+  #-- Show Please Wait
+  pleasewait("Getting System Information...");
+
+  #-- Fetch System Information
+  setvar(
+    #-- Variable Name
+      "sysinfo",
+    
+    #-- Variable Value
+      "<@center><b>Your Device System Information</b></@>\n\n"+
+      
+      "Device Name\t\t: <#469>Galaxy S4 LTE</#>\n"+
+      "Board Name\t\t: <#469>GT-I9505</#>\n"+
+      "Manufacturer\t\t: <#469>Samsung</#>\n"+
+	  
+	  "\n"+
+	  
+      "System Size\t\t: <b><#selectbg_g>"+getdisksize("/system","m")+" MB</#></b>\n"+
+        "\tFree\t\t: <b><#selectbg_g>"+getdiskfree("/system","m")+" MB</#></b>\n\n"+
+      "Data Size\t\t: <b><#selectbg_g>"+getdisksize("/data","m")+" MB</#></b>\n"+
+        "\tFree\t\t: <b><#selectbg_g>"+getdiskfree("/data","m")+" MB</#></b>\n\n"+
+      "SDCard Size\t\t: <b><#selectbg_g>"+getdisksize("/sdcard","m")+" MB</#></b>\n"+
+        "\tFree\t\t: <b><#selectbg_g>"+getdiskfree("/sdcard","m")+" MB</#></b>\n\n"+
+
+      ""
+  );
+  
+  #-- Show Textbox
+  textbox(
+    #-- Title
+      "System Information",
+    
+    #-- Subtitle
+      "Current system Information on your Xperia MDPI",
+    
+    #-- Icon
+      "@info",
+    
+    #-- Text
+      getvar("sysinfo")
+  );
+  
+  #-- Show Alert
+  alert(
+    #-- Alert Title
+      "Finished",
+    
+    #-- Alert Text
+      "You will be back to Menu",
+    
+    #-- Alert Icon
+      "@alert"
+  );
+  
+  #-- Back to Menu ( 2 Wizard UI to Back )
+  back("2");
+  
+endif;
+
+##
+# CHANGELOG DISPLAY
+#
+
+if prop("menu.prop","selected")=="3" then
+
+    #-- TextDialog 
+ textdialog(
+    #-- Title
+    "Hulk-Rom Changelog",
+	#-- Text
+    resread("changelog.txt"),
+    #-- Custom OK Button Text (Optional)
+    "Close"
+ );
+ 
+  #-- Back to Menu ( 2 Wizard UI to Back )
+  back("1");
+  
+endif;
+
+##
+# QUIT INSTALLER
+#
+
+if prop("menu.prop","selected")=="4" then
+
+#-- Exit
+	if
+	  confirm(
+		#-- Title
+		  "Exit",
+		#-- Text
+		  "Are you sure want to exit the Installer?",
+		#-- Icon (Optional)
+		  "@alert"
+	  )=="yes"
+	then
+	  #-- Exit 
+	  exit("");
+	endif;
+
+endif;
+
+
+##
+#  Select Type of Install
+#
+
+if prop("menu.prop","selected")=="1" then
+
+
+##
+# Sub Window 15
+#
+
+selectbox(
+  #-- Title
+	"Wipe",
+	  
+  #-- Sub Title
+    "Full wipe or dirty flash?",
+	  
+  #-- Icon:
+     "icons/install",
+	 
+  #-- Will be saved in /tmp/aroma/window15.prop
+	"window15.prop",
+
+  
+	  #----------------------------------[ Selectbox With Groups ]-----------------------------------#
+	  # TITLE            |  SUBTITLE                                                 | Initial Value #
+	  #------------------+-----------------------------------------------------------+---------------#  
+  
+	
+	"Select One",			"",							2,	#-- Group 1. key = "selected.1"
+	"I want to do a full wipe",	"Wipes: data, system, cache, dalvik",			1,	#-- selected.1 = 1
+	"Clean install",		"Wipes: data, internal data, system, cache, dalvik. ONLY DO THIS IF YOU HAVE THE ROM ON YOUR EXTERNAL SD CARD",	0,	#-- selected.1 = 2
+	"Dirty Flash",		"Wipes: only system, you will face bugs my friend",		0	#-- selected.1 = 3
+	  #--------[ Initial Value = 0: Unselected, 1: Selected, 2: Group Item, 3: Not Visible ]---------#
+
+);
+
+##
+# Sub Window 1
+#
+
+selectbox(
+  #-- Title
+    "Kernel",
+  
+  #-- Sub Title
+    "Stock Kernel or Hulk-Kernel",
+  
+  #-- Icon:
+     "icons/install",
+	 
+  #-- Will be saved in /tmp/aroma/window1.prop
+    "window1.prop",
+  
+	  #----------------------------------[ Selectbox With Groups ]-----------------------------------#
+	  # TITLE            |  SUBTITLE                                                 | Initial Value #
+	  #------------------+-----------------------------------------------------------+---------------#  
+  
+	"Select One",			"",							2,	#-- Group 1. key = "selected.1"
+	"Stock Kernel",			"This is the stock kernel without any modifications",	0,	#-- selected.1 = 1
+	"Hulk-Kernel V1.3.1",		"Some very nice improvements over stock one :) You will get App Optimisation on every boot because of stweaks. Uninstall it if you don't want that and reinstall as user app",	1	#-- selected.1 = 2
+
+	  #--------[ Initial Value = 0: Unselected, 1: Selected, 2: Group Item, 3: Not Visible ]---------#
+
+);
+
+alert( "Alert", "If you choose xposed once, you have to select if every time you flash the rom again. Otherwise it will give you a bootloop. If you want to disable xposed again, you have to wipe everything and reflash the rom without xposed!");
+
+##
+# Sub Window 2
+#
+
+selectbox(
+  #-- Title
+	"Xposed",
+	  
+  #-- Sub Title
+    "Do you want to install xposed?",
+	  
+  #-- Icon:
+     "icons/install",
+	 
+  #-- Will be saved in /tmp/aroma/window2.prop
+	"window2.prop",
+
+  
+	  #----------------------------------[ Selectbox With Groups ]-----------------------------------#
+	  # TITLE            |  SUBTITLE                                                 | Initial Value #
+	  #------------------+-----------------------------------------------------------+---------------#  
+  
+	
+	"Select One",		"",								2,	#-- Group 1. key = "selected.1"
+	"Yes",			"Xposed will be installed.",					1,	#-- selected.1 = 1
+	"No",			"Xposed wont be installed.",					0	#-- selected.1 = 2
+	  
+	  #--------[ Initial Value = 0: Unselected, 1: Selected, 2: Group Item, 3: Not Visible ]---------#
+
+);
+
+##
+# Sub Window 3
+#
+
+selectbox(
+  #-- Title
+	"Keyboards",
+	  
+  #-- Sub Title
+    "Select between 2 different keyboards!",
+	  
+  #-- Icon:
+     "icons/install",
+	 
+  #-- Will be saved in /tmp/aroma/window3.prop
+	"window3.prop",
+
+  
+	  #----------------------------------[ Selectbox With Groups ]-----------------------------------#
+	  # TITLE            |  SUBTITLE                                                 | Initial Value #
+	  #------------------+-----------------------------------------------------------+---------------#  
+  
+	
+	"Select One",			"",							2,	#-- Group 1. key = "selected.1"
+	"Stock Keyboard",		"Normal keyboard, as always.",				0,	#-- selected.1 = 1
+	"S6 Keyboard",   		"S6 ported keyboard.",					1	#-- selected.1 = 2
+	  
+	  #--------[ Initial Value = 0: Unselected, 1: Selected, 2: Group Item, 3: Not Visible ]---------#
+
+);
+
+alert( "Alert", "Some combinations with different apps S6/S4, can cause problems!...");
+
+##
+# Sub Window 4
+#
+
+selectbox(
+  #-- Title
+	"Weather Widgets",
+	  
+  #-- Sub Title
+    "Which weather widget do you want to install?",
+	  
+  #-- Icon:
+     "icons/install",
+	 
+  #-- Will be saved in /tmp/aroma/window4.prop
+	"window4.prop",
+
+  
+	  #----------------------------------[ Selectbox With Groups ]-----------------------------------#
+	  # TITLE            |  SUBTITLE                                                 | Initial Value #
+	  #------------------+-----------------------------------------------------------+---------------#  
+  
+	
+	"Select One",			"",							2,	#-- Group 1. key = "selected.1"
+	"Stock Weather Widget",		"Normal Widget, as always.",				1,	#-- selected.1 = 1
+	"S6 Weather Widget", 		"S6 ported Weather Widget.",				0,	#-- selected.1 = 2
+	"Nothing",			"Don't want any of them",				0	#-- selected.1 = 3
+	  
+	  #--------[ Initial Value = 0: Unselected, 1: Selected, 2: Group Item, 3: Not Visible ]---------#
+
+);
+
+##
+# Sub Window 5
+#
+
+selectbox(
+  #-- Title
+	"Music App",
+	  
+  #-- Sub Title
+    "Select your prefered music app",
+	  
+  #-- Icon:
+     "icons/install",
+	 
+  #-- Will be saved in /tmp/aroma/window5.prop
+	"window5.prop",
+
+  
+	  #----------------------------------[ Selectbox With Groups ]-----------------------------------#
+	  # TITLE            |  SUBTITLE                                                 | Initial Value #
+	  #------------------+-----------------------------------------------------------+---------------#  
+  
+	
+	"Select One",			"",							2,	#-- Group 1. key = "selected.1"
+	"Normal Music App",		"Stock Music app from the S4.",				1,	#-- selected.1 = 1
+	"S6 Music App",			"Here are some bugs possible!.",			0,	#-- selected.1 = 2
+	"Nothing",			"Don't want any of them",				0	#-- selected.1 = 3
+	  
+	  #--------[ Initial Value = 0: Unselected, 1: Selected, 2: Group Item, 3: Not Visible ]---------#
+
+);
+
+##
+# Sub Window 6
+#
+
+selectbox(
+  #-- Title
+	"SmartManager",
+	  
+  #-- Sub Title
+    "New smartmanager app by samsung!",
+	  
+  #-- Icon:
+     "icons/install",
+	 
+  #-- Will be saved in /tmp/aroma/window6.prop
+	"window6.prop",
+
+  
+	  #----------------------------------[ Selectbox With Groups ]-----------------------------------#
+	  # TITLE            |  SUBTITLE                                                 | Initial Value #
+	  #------------------+-----------------------------------------------------------+---------------#  
+  
+	
+	"Select One",		"",								2,	#-- Group 1. key = "selected.1"
+	"Yes",			"Installs the new smartmanager app from the S6.",		1,	#-- selected.1 = 1
+	"No",			"No I don't need that.",					0	#-- selected.1 = 2
+	  
+	  #--------[ Initial Value = 0: Unselected, 1: Selected, 2: Group Item, 3: Not Visible ]---------#
+
+);
+
+##
+# Sub Window 7
+#
+
+selectbox(
+  #-- Title
+	"Music App",
+	  
+  #-- Sub Title
+    "Choose between S6 and S4 gallery",
+	  
+  #-- Icon:
+     "icons/install",
+	 
+  #-- Will be saved in /tmp/aroma/window7.prop
+	"window7.prop",
+
+  
+	  #----------------------------------[ Selectbox With Groups ]-----------------------------------#
+	  # TITLE            |  SUBTITLE                                                 | Initial Value #
+	  #------------------+-----------------------------------------------------------+---------------#  
+  
+	
+	"Select One",			"",							2,	#-- Group 1. key = "selected.1"
+	"Normal Gallery App",		"Stock Gallery app from the S4.",			1,	#-- selected.1 = 1
+	"S6 Gallery App",		"S6 Gallery, maybe quiet similar to S4.",		0,	#-- selected.1 = 2
+	"Nothing",			"Don't want any of them",				0	#-- selected.1 = 3
+	  
+	  #--------[ Initial Value = 0: Unselected, 1: Selected, 2: Group Item, 3: Not Visible ]---------#
+
+);
+
+
+##
+# Sub Window 8
+#
+
+selectbox(
+  #-- Title
+	"Myfiles",
+	  
+  #-- Sub Title
+    "S6 or S4 Myfiles?",
+	  
+  #-- Icon:
+     "icons/install",
+	 
+  #-- Will be saved in /tmp/aroma/window8.prop
+	"window8.prop",
+
+  
+	  #----------------------------------[ Selectbox With Groups ]-----------------------------------#
+	  # TITLE            |  SUBTITLE                                                 | Initial Value #
+	  #------------------+-----------------------------------------------------------+---------------#  
+  
+	
+	"Select One",			"",							2,	#-- Group 1. key = "selected.1"
+	"Stock my files app",		"Just stock app as always.",				1,	#-- selected.1 = 1
+	"S6 my files",			"S6 ported my files app",				0,	#-- selected.1 = 2
+	"Nothing",			"Don't want any of them",				0	#-- selected.1 = 3
+	  
+	  #--------[ Initial Value = 0: Unselected, 1: Selected, 2: Group Item, 3: Not Visible ]---------#
+
+);
+
+##
+# Sub Window 9
+#
+
+selectbox(
+  #-- Title
+	"Launcher",
+	  
+  #-- Sub Title
+    "Choose between S6 and Stock Launcher.",
+	  
+  #-- Icon:
+     "icons/install",
+	 
+  #-- Will be saved in /tmp/aroma/window9.prop
+	"window9.prop",
+
+  
+	  #----------------------------------[ Selectbox With Groups ]-----------------------------------#
+	  # TITLE            |  SUBTITLE                                                 | Initial Value #
+	  #------------------+-----------------------------------------------------------+---------------#  
+  
+	
+	"Select One",			"",							2,	#-- Group 1. key = "selected.1"
+	"Normal Launcher",		"Stock Launcher from the S4.",				1,	#-- selected.1 = 1
+	"S6 Launcher",			"Latest Launcher, made by samsung (From the S6).",	0	#-- selected.1 = 2
+	  
+	  #--------[ Initial Value = 0: Unselected, 1: Selected, 2: Group Item, 3: Not Visible ]---------#
+
+);
+
+##
+# Sub Window 10
+#
+
+selectbox(
+  #-- Title
+	"Browser App",
+	  
+  #-- Sub Title
+    "Choose between S6 and Stock browser.",
+	  
+  #-- Icon:
+     "icons/install",
+	 
+  #-- Will be saved in /tmp/aroma/window10.prop
+	"window10.prop",
+
+  
+	  #----------------------------------[ Selectbox With Groups ]-----------------------------------#
+	  # TITLE            |  SUBTITLE                                                 | Initial Value #
+	  #------------------+-----------------------------------------------------------+---------------#  
+  
+	
+	"Select One",			"",								2,	#-- Group 1. key = "selected.1"
+	"Normal browser",		"Stock browser app from the S4. Stable and without bugs.",	1,	#-- selected.1 = 1
+	"S6 browser",			"This can may have some bugs.",					0,	#-- selected.1 = 2
+	"Nothing",			"Don't want any of them",					0	#-- selected.1 = 3
+	  
+	  #--------[ Initial Value = 0: Unselected, 1: Selected, 2: Group Item, 3: Not Visible ]---------#
+
+);
+
+##
+# Sub Window 11
+#
+
+selectbox(
+  #-- Title
+	"SFinder/Quick Connect",
+	  
+  #-- Sub Title
+    "You want to install the rom with or without Sfinder?",
+	  
+  #-- Icon:
+     "icons/install",
+	 
+  #-- Will be saved in /tmp/aroma/window11.prop
+	"window11.prop",
+
+  
+	  #----------------------------------[ Selectbox With Groups ]-----------------------------------#
+	  # TITLE            |  SUBTITLE                                                 | Initial Value #
+	  #------------------+-----------------------------------------------------------+---------------#  
+  
+	
+	"Select One",			"",							2,	#-- Group 1. key = "selected.1"
+	"Stock SystemUI",		"Will install it WITH sfinder/quick connect.",	1,	#-- selected.1 = 1
+	"Modded SystemUI",		"Sfinder and quick connect will be removed.",		0	#-- selected.1 = 2
+	  
+	  #--------[ Initial Value = 0: Unselected, 1: Selected, 2: Group Item, 3: Not Visible ]---------#
+
+);
+
+##
+# Sub Window 12
+#
+
+selectbox(
+  #-- Title
+	"SHealth",
+	  
+  #-- Sub Title
+    "Choose between the new and old SHEALTH",
+	  
+  #-- Icon:
+     "icons/install",
+	 
+  #-- Will be saved in /tmp/aroma/window12.prop
+	"window12.prop",
+
+  
+	  #----------------------------------[ Selectbox With Groups ]-----------------------------------#
+	  # TITLE            |  SUBTITLE                                                 | Initial Value #
+	  #------------------+-----------------------------------------------------------+---------------#  
+  
+	
+	"Select One",			"",							2,	#-- Group 1. key = "selected.1"
+	"Stock SHealth",		"Just as always",					1,	#-- selected.1 = 1
+	"S6 SHealth",			"With more features and options",			0,	#-- selected.1 = 2
+	"Nothing",			"Don't want any of them",				0	#-- selected.1 = 3
+	  
+	  #--------[ Initial Value = 0: Unselected, 1: Selected, 2: Group Item, 3: Not Visible ]---------#
+
+);
+
+##
+# Sub Window 13
+#
+
+selectbox(
+  #-- Title
+	"Calculator",
+	  
+  #-- Sub Title
+    "Choose two different versions of the calculator",
+	  
+  #-- Icon:
+     "icons/install",
+	 
+  #-- Will be saved in /tmp/aroma/window13.prop
+	"window13.prop",
+
+  
+	  #----------------------------------[ Selectbox With Groups ]-----------------------------------#
+	  # TITLE            |  SUBTITLE                                                 | Initial Value #
+	  #------------------+-----------------------------------------------------------+---------------#  
+  
+	
+	"Select One",			"",							2,	#-- Group 1. key = "selected.1"
+	"Stock Calculator",		"Well known calculator",				1,	#-- selected.1 = 1
+	"S6 Calculator",		"Looks a little bit more material design",		0,	#-- selected.1 = 2
+	"Nothing",			"Don't want any of them",				0	#-- selected.1 = 3
+	  
+	  #--------[ Initial Value = 0: Unselected, 1: Selected, 2: Group Item, 3: Not Visible ]---------#
+
+);
+
+##
+# Sub Window 14
+#
+
+selectbox(
+  #-- Title
+	"Email",
+	  
+  #-- Sub Title
+    "New or old Email App?",
+	  
+  #-- Icon:
+     "icons/install",
+	 
+  #-- Will be saved in /tmp/aroma/window14.prop
+	"window14.prop",
+
+  
+	  #----------------------------------[ Selectbox With Groups ]-----------------------------------#
+	  # TITLE            |  SUBTITLE                                                 | Initial Value #
+	  #------------------+-----------------------------------------------------------+---------------#  
+  
+	
+	"Select One",		"",							2,	#-- Group 1. key = "selected.1"
+	"Stock Email",		"Good old Email App",					1,	#-- selected.1 = 1
+	"S6 Email",		"New Email app from the S6",				0,	#-- selected.1 = 2
+	"Nothing",		"Don't want any of them",				0	#-- selected.1 = 3
+	  
+	  #--------[ Initial Value = 0: Unselected, 1: Selected, 2: Group Item, 3: Not Visible ]---------#
+
+);
+
+##
+# Sub Window 16
+#
+
+selectbox(
+  #-- Title
+	"Optical Reader",
+	  
+  #-- Sub Title
+    "Select between S4 and S6 reader",
+	  
+  #-- Icon:
+     "icons/install",
+	 
+  #-- Will be saved in /tmp/aroma/window16.prop
+	"window16.prop",
+
+  
+	  #----------------------------------[ Selectbox With Groups ]-----------------------------------#
+	  # TITLE            |  SUBTITLE                                                 | Initial Value #
+	  #------------------+-----------------------------------------------------------+---------------#  
+  
+	
+	"Select One",			"",							2,	#-- Group 1. key = "selected.1"
+	"S4 optical reader",		"Normal Optical Reader",				1,	#-- selected.1 = 1
+	"S6 optical reader",		"Updated to samsung s6 reader",				0,	#-- selected.1 = 2
+	"Nothing",			"Don't want any of them",				0	#-- selected.1 = 3
+	  
+	  #--------[ Initial Value = 0: Unselected, 1: Selected, 2: Group Item, 3: Not Visible ]---------#
+
+);
+
+# Installation UI
+
+ini_set("text_next", "Install Now");
+ini_set("icon_next", "@installbutton");
+  
+viewbox(
+  #-- Title
+    "Ready to Install",
+
+  #-- Text
+    "Hulk-Rom is ready to be installed.\n\n"+
+	"Press <b>Install ROM</b> to begin the installation.\n\n"+
+	"To review or change any of your installation settings, press <b>Back</b>.\n\n"+
+	"Press Menu -> Quit Installation to quit.",
+
+  #-- Icon
+    "@install"
+);
+
+alert( "Alert", "Installation will begin now...");
+endif;
+
+##
+# INSTALLATION PROCESS
+#
+
+if prop("menu.prop","selected")== "1" 
+then
+
+ini_set("text_next", "Next");
+ini_set("icon_next", "@next");
+
+install(
+  "Hulk-Rom™ Installation",
+  getvar("rom_name") + "\n" +
+  "Please wait while Hulk-Rom is conquering your phone" +
+  "",
+  "icons/install"
+);
+
+ini_set("text_next", "Finish");
+ini_set("icon_next", "@finish");
+
+alert( "Alert", "Please wipe dalvik-cache and cache now...");
+
+endif;
+
