@@ -1,0 +1,15 @@
+﻿<?xml  version="1.0" encoding="UTF-8" ?>
+<SamsungMobileFeauture>
+  <Version>ED002</Version>
+  <Country>GERMANY</Country>
+  <CountryISO>DE</CountryISO>
+  <SalesCode>DBT</SalesCode>
+  <FeatureSet>
+    <CscFeature_Sip_DisableAutoCorrection_DA>false</CscFeature_Sip_DisableAutoCorrection_DA>
+    <CscFeature_Sip_ApplyAutoCorrectionPatent>true</CscFeature_Sip_ApplyAutoCorrectionPatent>
+    <CscFeature_Web_bool_EnablePriorityUserBookmark>false</CscFeature_Web_bool_EnablePriorityUserBookmark>
+    <CscFeature_Setting_EnableAutoSimApkInstaller>TRUE</CscFeature_Setting_EnableAutoSimApkInstaller>
+	<CscFeature_Message_ConfigAddTextOption>All</CscFeature_Message_ConfigAddTextOption>
+    <CscFeature_RIL_EnableLaunchBrowser>TRUE</CscFeature_RIL_EnableLaunchBrowser>
+  </FeatureSet>
+</SamsungMobileFeauture>

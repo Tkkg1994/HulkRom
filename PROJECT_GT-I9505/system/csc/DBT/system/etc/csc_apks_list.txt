@@ -1,0 +1,3 @@
+/system/app/de.pizza.lib.apk
+/system/app/hrs_and_samDePhone12_keysource.apk
+/system/app/samsung_preinstall_03_10.apk

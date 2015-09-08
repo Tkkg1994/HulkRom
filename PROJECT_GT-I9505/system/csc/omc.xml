@@ -1,0 +1,25 @@
+<?xml  version="1.0" encoding="UTF-8" ?>
+<ServiceData>
+    <GeneralConfiguration>
+        <Enable>true</Enable>
+        <DebugMode>false</DebugMode>
+    </GeneralConfiguration>
+    <Operator>
+        <Name>voda</Name>
+        <Url><![CDATA[http://updates.vodafone.com/Appdl/?App=38&mcc=%s&spn=%s&mnc=%s&errorRedirect=false]]></Url>
+        <PermittedMccmnc>26202</PermittedMccmnc>
+        <PermittedSpn>empty,(?i).*VODA.*</PermittedSpn>
+        <MinLimitFileSize>1048576</MinLimitFileSize>
+        <ShowDataWarning>TRUE</ShowDataWarning>
+    </Operator>
+    <Operator>
+        <Name>tmo</Name>
+        <ResourceOverride>tmo</ResourceOverride>
+        <Url><![CDATA[http://otto.test.tmo.net/sal/sal.apk?mcc=%s&mnc=%s]]></Url>
+        <PermittedMccmnc>26201</PermittedMccmnc>
+        <PermittedGid>1,2,3,4,153</PermittedGid>
+        <PostExecute>AUTO_BROADCAST</PostExecute>
+        <PostExecuteData>de.telekom.tsc.INIT</PostExecuteData>
+    </Operator>
+</ServiceData>
+

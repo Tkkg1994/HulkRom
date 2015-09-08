@@ -1,0 +1,14 @@
+﻿<?xml  version="1.0" encoding="UTF-8" ?>
+<SamsungMobileFeauture>  
+  <FeatureSet>
+    <CscFeature_Web_bool_EnablePriorityUserBookmark>false</CscFeature_Web_bool_EnablePriorityUserBookmark>
+  </FeatureSet>
+  <DefaultInputMethod>
+    
+	<!-- ì˜ˆ) ì‚¼ì„±í‚¤íŒ¨ë“œ : com.samsung.sec.android.inputmethod.axt9 -->
+	<!-- ì˜ˆ) Swype : com.swype.android.inputmethod -->
+	<!-- ì˜ˆ) Android Keyboard : com.android.inputmethod.latin -->
+	
+	<input_method>com.sec.android.inputmethod</input_method>
+  </DefaultInputMethod>
+</SamsungMobileFeauture>

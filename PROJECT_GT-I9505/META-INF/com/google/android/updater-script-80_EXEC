@@ -1,0 +1,2 @@
+run_program("/system/xbin/su", "--install");
+run_program("/system/xbin/busybox", "--install", "-s", "/system/xbin");

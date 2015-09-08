@@ -1378,21 +1378,20 @@
 		</method>
 
 		<method name="copyFile">
-			<seinfo value="system" />
-			<seinfo value="release" />
-			<seinfo value="media" />
-			<seinfo value="platform" />
-			<seinfo value="shared" />
-			<agentType value="8" />
+			<package name="com.sec.knox.bridge" seinfo="platform" />
+			<package name="com.samsung.knox.rcp.components" seinfo="platform" />
+			<package name="com.sec.knox.containeragent" seinfo="platform" />
+			<package name="com.sec.knox.foldercontainer" seinfo="platform" />
+			<package name="com.sec.knox.bluetooth" seinfo="platform" />
+			<package name="com.sec.knoxcts" seinfo="platform" />
+			<package name="com.android.packageinstaller" seinfo="platform" />
 		</method>
 
 		<method name="moveFile">
-			<seinfo value="system" />
-			<seinfo value="release" />
-			<seinfo value="media" />
-			<seinfo value="platform" />
-			<seinfo value="shared" />
-			<agentType value="8" />
+			<package name="com.sec.knox.bridge" seinfo="platform" />
+			<package name="com.samsung.knox.rcp.components" seinfo="platform" />
+			<package name="com.sec.knox.containeragent" seinfo="platform" />
+            <package name="com.sec.knoxcts" seinfo="platform" />
 		</method>
 
 		<method name="isFileExist">
@@ -1572,6 +1571,15 @@
 			<seinfo value="shared" />
 		</method>
 
+        <method name="moveFilesForApp">
+	        <package name="com.sec.android.gallery3d" seinfo="platform" />
+	        <package name="com.sec.android.app.music" seinfo="platform" />
+	        <package name="com.sec.android.app.myfiles" seinfo="platform" />
+	        <package name="com.samsung.everglades.video" seinfo="platform" />
+	        <package name="com.samsung.android.video" seinfo="platform" />
+	        <package name="com.samsung.video" seinfo="platform" />
+	    </method>
+
 	</service>
 
 
@@ -1713,19 +1721,16 @@
 		</method>
 
 		<method name="copyFile">
-			<seinfo value="system" />
-			<seinfo value="release" />
-			<seinfo value="media" />
-			<seinfo value="platform" />
-			<seinfo value="shared" />
+			<package name="com.sec.knox.bridge" seinfo="platform" />
+			<package name="com.samsung.knox.rcp.components" seinfo="platform" />
+			<package name="com.sec.knox.containeragent" seinfo="platform" />
+			<package name="com.sec.knox.bluetooth" seinfo="platform" />
 		</method>
 
 		<method name="moveFile">
-			<seinfo value="system" />
-			<seinfo value="release" />
-			<seinfo value="media" />
-			<seinfo value="platform" />
-			<seinfo value="shared" />
+			<package name="com.sec.knox.bridge" seinfo="platform" />
+			<package name="com.samsung.knox.rcp.components" seinfo="platform" />
+			<package name="com.sec.knox.containeragent" seinfo="platform" />
 		</method>
 
 		<method name="getErrorMessage">
@@ -1780,29 +1785,27 @@
 			<seinfo value="shared" />
 			<package name="com.sec.knox.containeragent2" seinfo="platform" />
 		</method>
-		
+
 		<method name="copyFiles">
-			<seinfo value="system" />
-			<seinfo value="release" />
-			<seinfo value="media" />
-			<seinfo value="platform" />
-			<seinfo value="shared" />
+			<package name="com.sec.knox.bridge" seinfo="platform" />
+			<package name="com.samsung.knox.rcp.components" seinfo="platform" />
+			<package name="com.sec.knox.containeragent" seinfo="platform" />
+			<package name="com.sec.knox.bluetooth" seinfo="platform" />
 		</method>
-		
+
 		<method name="moveFiles">
-			<seinfo value="system" />
-			<seinfo value="release" />
-			<seinfo value="media" />
-			<seinfo value="platform" />
-			<seinfo value="shared" />
+			<package name="com.sec.knox.bridge" seinfo="platform" />
+			<package name="com.samsung.knox.rcp.components" seinfo="platform" />
+			<package name="com.sec.knox.containeragent" seinfo="platform" />
 		</method>
 
 		<method name="moveFilesForApp">
-			<seinfo value="system" />
-			<seinfo value="release" />
-			<seinfo value="media" />
-			<seinfo value="platform" />
-			<seinfo value="shared" />
+			<package name="com.sec.android.gallery3d" seinfo="platform" />
+			<package name="com.sec.android.app.music" seinfo="platform" />
+			<package name="com.sec.android.app.myfiles" seinfo="platform" />
+			<package name="com.samsung.everglades.video" seinfo="platform" />
+			<package name="com.samsung.android.video" seinfo="platform" />
+			<package name="com.samsung.video" seinfo="platform" />
 		</method>
 
 		<method name="getFiles">
@@ -2820,6 +2823,7 @@
 			<seinfo value="good_trustonicpartner" />
 			<seinfo value="gsd" />
 			<package name="com.samsung.android.bbc.bbcagent" seinfo="platform" />
+			<package name="com.samsung.android.irm.service" seinfo="platform" />
 		</method>
 
 		<method name="removeAppFromContainer">

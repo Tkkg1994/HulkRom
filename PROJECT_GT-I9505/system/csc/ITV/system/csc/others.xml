@@ -1,0 +1,15 @@
+﻿<?xml  version="1.0" encoding="UTF-8" ?>
+<SamsungMobileFeauture>
+  <Version>ED001</Version>
+  <Country>ITALY</Country>
+  <CountryISO>IT</CountryISO>
+  <SalesCode>ITV</SalesCode>
+  <FeatureSet>
+    <CscFeature_Launcher_TotalPageCount>5</CscFeature_Launcher_TotalPageCount>
+    <CscFeature_Launcher_DefaultPageNumber>2</CscFeature_Launcher_DefaultPageNumber>
+    <CscFeature_Web_EnableAutoSimHomeUrlInProfile>TRUE</CscFeature_Web_EnableAutoSimHomeUrlInProfile>
+    <CscFeature_Web_bool_EnablePriorityUserBookmark>false</CscFeature_Web_bool_EnablePriorityUserBookmark>
+	<CscFeature_Message_ConfigAddTextOption>All</CscFeature_Message_ConfigAddTextOption>
+    <CscFeature_RIL_EnableLaunchBrowser>TRUE</CscFeature_RIL_EnableLaunchBrowser>
+  </FeatureSet>
+</SamsungMobileFeauture>

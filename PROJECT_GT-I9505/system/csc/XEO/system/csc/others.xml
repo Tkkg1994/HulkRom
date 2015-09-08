@@ -1,0 +1,13 @@
+﻿<?xml  version="1.0" encoding="UTF-8" ?>
+<SamsungMobileFeauture>
+<Version>ED002</Version>
+  <Country>POLAND</Country>
+  <CountryISO>PL</CountryISO>
+  <SalesCode>XEO</SalesCode>
+<FeatureSet>
+    <CscFeature_Web_EnableAutoSimHomeUrlInProfile>TRUE</CscFeature_Web_EnableAutoSimHomeUrlInProfile>
+    <CscFeature_Web_bool_EnablePriorityUserBookmark>false</CscFeature_Web_bool_EnablePriorityUserBookmark>
+	<CscFeature_Message_ConfigAddTextOption>All</CscFeature_Message_ConfigAddTextOption>
+    <CscFeature_RIL_EnableLaunchBrowser>TRUE</CscFeature_RIL_EnableLaunchBrowser>
+</FeatureSet>
+</SamsungMobileFeauture>
