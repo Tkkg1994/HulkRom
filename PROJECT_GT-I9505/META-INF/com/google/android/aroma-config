@@ -22,10 +22,10 @@ ini_set("dp","5"); #-- XXHDPI ( 1920x1080 / WVGA )
 #
 
 ini_set("rom_name",             "Hulk-Rom™ ");
-ini_set("rom_version",          "V1.1 FINAL");
+ini_set("rom_version",          "V1.3 FINAL");
 ini_set("rom_author",           "Tkkg1994");
 ini_set("rom_device",           "GT-I9505");
-ini_set("rom_date",             "15.08.2015");
+ini_set("rom_date",             "10.09.2015");
 
 
 ##
@@ -362,7 +362,7 @@ selectbox(
 	"Select One",			"",							2,	#-- Group 1. key = "selected.1"
 	"I want to do a full wipe",	"Wipes: data, system, cache, dalvik",			1,	#-- selected.1 = 1
 	"Clean install",		"Wipes: data, internal data, system, cache, dalvik. ONLY DO THIS IF YOU HAVE THE ROM ON YOUR EXTERNAL SD CARD",	0,	#-- selected.1 = 2
-	"Dirty Flash",		"Wipes: only system, you will face bugs my friend",		0	#-- selected.1 = 3
+	"Dirty Flash",			"Wipes: only system, you will face bugs my friend",		0	#-- selected.1 = 3
 	  #--------[ Initial Value = 0: Unselected, 1: Selected, 2: Group Item, 3: Not Visible ]---------#
 
 );
@@ -390,7 +390,7 @@ selectbox(
   
 	"Select One",			"",							2,	#-- Group 1. key = "selected.1"
 	"Stock Kernel",			"This is the stock kernel without any modifications",	0,	#-- selected.1 = 1
-	"Hulk-Kernel V1.3.1",		"Some very nice improvements over stock one :) You will get App Optimisation on every boot because of stweaks. Uninstall it if you don't want that and reinstall as user app",	1	#-- selected.1 = 2
+	"Hulk-Kernel V1.3.5",		"Some very nice improvements over stock one :) You will get App Optimisation on every boot because of stweaks. Uninstall it if you don't want that and reinstall as user app",	1	#-- selected.1 = 2
 
 	  #--------[ Initial Value = 0: Unselected, 1: Selected, 2: Group Item, 3: Not Visible ]---------#
 
@@ -532,10 +532,10 @@ selectbox(
 
 selectbox(
   #-- Title
-	"SmartManager",
+	"Calendar",
 	  
   #-- Sub Title
-    "New smartmanager app by samsung!",
+    "New calendar app or stock calendar by samsung!",
 	  
   #-- Icon:
      "icons/install",
@@ -550,8 +550,9 @@ selectbox(
   
 	
 	"Select One",		"",								2,	#-- Group 1. key = "selected.1"
-	"Yes",			"Installs the new smartmanager app from the S6.",		1,	#-- selected.1 = 1
-	"No",			"No I don't need that.",					0	#-- selected.1 = 2
+	"Normal Calendar App",		"Stock Calendar app from the S4.",			1,	#-- selected.1 = 1
+	"S6 Calendar App",		"S6 Calendar, looks way better than the old.",		0,	#-- selected.1 = 2
+	"Nothing",			"Don't want any of them",				0	#-- selected.1 = 3
 	  
 	  #--------[ Initial Value = 0: Unselected, 1: Selected, 2: Group Item, 3: Not Visible ]---------#
 
@@ -818,10 +819,10 @@ selectbox(
 
 selectbox(
   #-- Title
-	"Optical Reader",
+	"Wallpaper Picker",
 	  
   #-- Sub Title
-    "Select between S4 and S6 reader",
+    "Select between S4 and S6 Wallpaper Picker",
 	  
   #-- Icon:
      "icons/install",
@@ -836,10 +837,133 @@ selectbox(
   
 	
 	"Select One",			"",							2,	#-- Group 1. key = "selected.1"
-	"S4 optical reader",		"Normal Optical Reader",				1,	#-- selected.1 = 1
-	"S6 optical reader",		"Updated to samsung s6 reader",				0,	#-- selected.1 = 2
+	"S4 Wallpaper Picker",		"Normal Wallpaper Picker as always",			1,	#-- selected.1 = 1
+	"S6 Wallpaper Picker",		"Updated to samsung latest s6 Wallpaper Picker",	0,	#-- selected.1 = 2
+	  
+	  #--------[ Initial Value = 0: Unselected, 1: Selected, 2: Group Item, 3: Not Visible ]---------#
+
+);
+
+##
+# Sub Window 17
+#
+
+selectbox(
+  #-- Title
+	"VoiceRecorder",
+	  
+  #-- Sub Title
+    "New or old VoiceRecorder?",
+	  
+  #-- Icon:
+     "icons/install",
+	 
+  #-- Will be saved in /tmp/aroma/window17.prop
+	"window17.prop",
+
+  
+	  #----------------------------------[ Selectbox With Groups ]-----------------------------------#
+	  # TITLE            |  SUBTITLE                                                 | Initial Value #
+	  #------------------+-----------------------------------------------------------+---------------#  
+  
+	
+	"Select One",			"",							2,	#-- Group 1. key = "selected.1"
+	"Stock VoiceRecorder",		"S4 VoiceRecorder as we know it",			1,	#-- selected.1 = 1
+	"S6 VoiceRecorder",		"New VoiceRecorder app from the S6",			0,	#-- selected.1 = 2
 	"Nothing",			"Don't want any of them",				0	#-- selected.1 = 3
 	  
+	  #--------[ Initial Value = 0: Unselected, 1: Selected, 2: Group Item, 3: Not Visible ]---------#
+
+);
+
+##
+# Sub Checkbox 1
+#
+
+checkbox(
+  #-- Title
+	"Samsung Apps",
+	  
+  #-- Sub Title
+    "Select which samsung apps you want to install to your device",
+	  
+  #-- Icon:
+	"@update",
+	  
+  #-- Will be saved in /tmp/aroma/checkbox1.prop
+	"checkbox1.prop",
+
+  
+	  #----------------------------------[ Selectbox With Groups ]-----------------------------------#
+	  # TITLE            |  SUBTITLE                                                 | Initial Value #
+	  #------------------+-----------------------------------------------------------+---------------#  
+
+	"Samsung Apps",		"",									2,	#-- group 1
+	"Allshare",		"Need for wifi direct and mirror the phone",				1,	#-- item.1.1
+	"ANT",			"",									1,	#-- item.1.2
+	"Blurb",		"",									1,	#-- item.1.3
+	"Briefing",		"Is available as a widget, shows you information and news",		0,	#-- item.1.4
+	"Filpboard",		"Newspaper that samsung preinstalls",					0,	#-- item.1.5
+	"Group Play",		"",									0,	#-- item.1.6
+	"Samsung Hub",		"Hub features for movie, books, games etc.",				0,	#-- item.1.7
+	"Kids Mode",		"Installs the option for the kidsmode",					0,	#-- item.1.8
+	"Optical Reader",	"Installs the optical reader to your device",				0,	#-- item.1.9
+	"Peel",			"Needed to watch what comes in the TV at the moment",			0,	#-- item.1.10
+	"Polaris",		"Office app provided from samsung",					0,	#-- item.1.11
+	"Samsung Link",		"",									1,	#-- item.1.12
+	"SmartManager",		"Adapted smartmanager for the S4",					1,	#-- item.1.13
+	"SMemo",		"To write your thoughts down",						0,	#-- item.1.14
+	"Story Album",		"Make beautiful albums with your pictures",				0,	#-- item.1.15
+	"SVoice",		"Speak and control your phone with your voice",				0,	#-- item.1.16
+	"Translator",		"Translator app by samsung",						0,	#-- item.1.17
+	"Travel Service",	"Some widgets for traveling",						0,	#-- item.1.18
+	"TripAdvisor",		"",									0,	#-- item.1.19
+	"Yahoo",		"",									0	#-- item.1.20
+
+	  #--------[ Initial Value = 0: Unselected, 1: Selected, 2: Group Item, 3: Not Visible ]---------#
+
+);
+
+##
+# Sub Checkbox 2
+#
+
+checkbox(
+  #-- Title
+	"Google Apps",
+	  
+  #-- Sub Title
+    "Select which google apps you want to install to your device",
+	  
+  #-- Icon:
+	"@update",
+	  
+  #-- Will be saved in /tmp/aroma/checkbox2.prop
+	"checkbox2.prop",
+
+  
+	  #----------------------------------[ Selectbox With Groups ]-----------------------------------#
+	  # TITLE            |  SUBTITLE                                                 | Initial Value #
+	  #------------------+-----------------------------------------------------------+---------------#  
+
+	"Google Apps",		"",									2,	#-- group 1
+	"Google Books",		"Book store from google",						0,	#-- item.1.1
+	"Google Chrome",	"Chrome browser, I think you should know it",				0,	#-- item.1.2
+	"Google Drive",		"Store apps and data in google cloud",					0,	#-- item.1.3
+	"PlayGames",		"Can be used to play against other users",				0,	#-- item.1.4
+	"Gmail",		"Email program from google",						0,	#-- item.1.5
+	"Hangouts",		"Messenger from google",						0,	#-- item.1.6
+	"Google Kiosk",		"Like a newspaper, you can read new things in it",			0,	#-- item.1.7
+	"Google Maps",		"Map/Card for the whole world",						0,	#-- item.1.8
+	"PlayMusic",		"MusicApp from google",							0,	#-- item.1.9
+	"Google Search",	"For searching the web, and google now",				0,	#-- item.1.10
+	"Google Plus",		"Something similar to facebook, social media and stuff.",		0,	#-- item.1.11
+	"Talkback",		"",									0,	#-- item.1.12
+	"Google TTS",		"",									0,	#-- item.1.13
+	"Google Movies",	"You can by some new movies here.",					0,	#-- item.1.14
+	"Youtube",		"For watching online shows etc.",					0,	#-- item.1.15
+	"Dropbox",		"For online storage",							0	#-- item.1.16
+
 	  #--------[ Initial Value = 0: Unselected, 1: Selected, 2: Group Item, 3: Not Visible ]---------#
 
 );
