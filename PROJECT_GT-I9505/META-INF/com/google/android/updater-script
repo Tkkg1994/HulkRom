@@ -117,14 +117,14 @@ if
     file_getprop("/tmp/aroma/window6.prop","selected.1") == "1"
      then
     ui_print("Installing S4 Calendar...");
-	package_extract_dir("Hulk/Calendar", "/system");
+	package_extract_dir("Hulk/Calendar/S4", "/system");
 endif;
 	
 if
     file_getprop("/tmp/aroma/window6.prop","selected.1") == "2"
      then
     ui_print("Installing S6 Calendar...");
-	package_extract_dir("Hulk/Calendar", "/system");
+	package_extract_dir("Hulk/Calendar/S6", "/system");
 endif;
 
 if
