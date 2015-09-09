@@ -111,28 +111,6 @@ if
     ui_print("Installing nothing...");
 endif;
 
-#-- SUB WINDOW 6
-
-if
-    file_getprop("/tmp/aroma/window6.prop","selected.1") == "1"
-     then
-    ui_print("Installing S4 Calendar...");
-	package_extract_dir("Hulk/Calendar/S4", "/system");
-endif;
-	
-if
-    file_getprop("/tmp/aroma/window6.prop","selected.1") == "2"
-     then
-    ui_print("Installing S6 Calendar...");
-	package_extract_dir("Hulk/Calendar/S6", "/system");
-endif;
-
-if
-    file_getprop("/tmp/aroma/window6.prop","selected.1") == "3"
-     then
-    ui_print("Installing nothing...");
-endif;
-
 #-- SUB WINDOW 7
 
 if
@@ -316,28 +294,6 @@ if
      then
     ui_print("Installing S6 Wallpaper Picker...");
 	package_extract_dir("Hulk/Wallpaper/S6", "/system/priv-app");
-endif;
-
-#-- SUB WINDOW 17
-
-if
-    file_getprop("/tmp/aroma/window17.prop","selected.1") == "1"
-     then
-    ui_print("Installing Stock Wallpaper Picker...");
-	package_extract_dir("Hulk/Voicerecorder/S4", "/system");
-endif;
-	
-if
-    file_getprop("/tmp/aroma/window17.prop","selected.1") == "2"
-     then
-    ui_print("Installing S6 Wallpaper Picker...");
-	package_extract_dir("Hulk/Voicerecorder/S6", "/system");
-endif;
-
-if
-    file_getprop("/tmp/aroma/window17.prop","selected.1") == "3"
-     then
-    ui_print("Installing nothing...");
 endif;
 
 #--CHECK BOX 1
