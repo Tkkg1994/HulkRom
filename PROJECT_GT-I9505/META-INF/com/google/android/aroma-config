@@ -838,7 +838,7 @@ selectbox(
 	
 	"Select One",			"",							2,	#-- Group 1. key = "selected.1"
 	"S4 Wallpaper Picker",		"Normal Wallpaper Picker as always",			1,	#-- selected.1 = 1
-	"S6 Wallpaper Picker",		"Updated to samsung latest s6 Wallpaper Picker",	0,	#-- selected.1 = 2
+	"S6 Wallpaper Picker",		"Updated to samsung latest s6 Wallpaper Picker",	0	#-- selected.1 = 2
 	  
 	  #--------[ Initial Value = 0: Unselected, 1: Selected, 2: Group Item, 3: Not Visible ]---------#
 
